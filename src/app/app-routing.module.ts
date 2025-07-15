@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    component: HomePageComponent,
+  },
   {
     path: 'admin',
     loadChildren: () =>
@@ -11,6 +16,11 @@ const routes: Routes = [
     path: 'user',
     loadChildren: () =>
       import('./user/user/user.module').then((m) => m.UserModule),
+  },
+  {
+    path: 'share-ui',
+    loadChildren: () =>
+      import('./modules/share-ui/share-ui.module').then((m) => m.ShareUiModule),
   },
 ];
 

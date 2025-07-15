@@ -1,1 +1,18 @@
-<p>admin works!</p>
+<div class="flex">
+  <div class="hidden md:block md:w-72">
+    <!-- sidebmenu -->
+    <app-sidemenu />
+  </div>
+  <div class="flex-1">
+    <p-button
+      (click)="adminSidebarService.toggleSidebar()"
+      class="absolute block md:hidden m-2"
+      size="small"
+      icon="pi pi-align-justify"
+    />
+    <!-- content area -->
+    <div class="p-10">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
